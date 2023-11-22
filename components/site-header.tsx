@@ -1,52 +1,26 @@
-import Link from "next/link"
-
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
-import { Icons } from "@/components/icons"
-import { MainNav } from "@/components/main-nav"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { siteConfig } from "@/config/site";
+import Image from "next/image";
+import Link from "next/link";
 
 export function SiteHeader() {
-  return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background">
-      <div className="container flex items-center h-16 space-x-4 sm:justify-between sm:space-x-0">
-        <MainNav items={siteConfig.mainNav} />
-        <div className="flex items-center justify-end flex-1 space-x-4">
-          <nav className="flex items-center space-x-1">
-            <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })}
-              >
-                <Icons.gitHub className="w-5 h-5" />
-                <span className="sr-only">GitHub</span>
-              </div>
-            </Link>
-            <Link
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })}
-              >
-                <Icons.twitter className="w-5 h-5 fill-current" />
-                <span className="sr-only">Twitter</span>
-              </div>
-            </Link>
-            <ThemeToggle />
-          </nav>
-        </div>
+  return <>
+    <header className="container flex flex-col bg-stone-300">
+      <div className="py-8 mb-8 border-b border-primary">
+        <Image src="/assets/logo.png" alt="Logo" width={300} height={135} className="mx-auto" />
+      </div>
+      <div className="flex items-center justify-center gap-8 text-sm md:text-xl">
+        {siteConfig.mainNav.map((item) => (
+          <Link href={item.href} key={item.title} className="pb-2 border-2 border-transparent text-primary font-coming hover:text-secondary hover:border-b-secondary">
+            {item.title}
+          </Link>
+        ))}
       </div>
     </header>
-  )
+    <Image src="/assets/header-banner.png" alt="Separator" height={230} width={1000} layout="responsive" className="mt-2 mb-8" sizes="100vw" />
+    
+    {/* Border bottom header */}
+    <div className="container">
+      <div className="h-px bg-primary"></div>
+    </div>
+  </>
 }

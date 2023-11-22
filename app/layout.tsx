@@ -2,11 +2,12 @@ import "@/styles/globals.css"
 import { Metadata } from "next"
 
 import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
+import { fontSans, fontComing } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
+import { SiteFooter } from "@/components/site-footer"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 export const metadata: Metadata = {
   title: {
@@ -32,21 +33,21 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
+      <html lang="fr" suppressHydrationWarning>
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
+            "min-h-screen bg-stone-300 font-sans antialiased relative",
+            fontSans.variable,
+            fontComing.variable
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              <div className="flex-1">{children}</div>
-            </div>
-            <TailwindIndicator />
-          </ThemeProvider>
+          <div className="relative flex flex-col min-h-screen">
+            <SiteHeader />
+            <div className="flex-1">{children}</div>
+            <SiteFooter />
+          </div>
+          <TailwindIndicator />
+          <ScrollToTop />
         </body>
       </html>
     </>

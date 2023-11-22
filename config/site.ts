@@ -5,13 +5,25 @@ export const siteConfig = {
   description: "I restore books",
   mainNav: [
     {
-      title: "Home",
+      title: "Accueil",
       href: "/",
     },
     {
-      title: "About",
-      href: "/about",
+      title: "À propos",
+      href: "/a-propos",
     },
+    {
+      title: "Savoir-faire",
+      href: "/savoir-faire",
+    },
+    {
+      title: "Atelier",
+      href: "/atelier",
+    },
+    {
+      title: "Contact",
+      href: "/contact",
+    }
   ],
   links: {
     twitter: "",
