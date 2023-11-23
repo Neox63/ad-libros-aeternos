@@ -28,4 +28,13 @@ export const Icons = {
       ></path>
     </svg>
   ),
+  diamond: (props: LucideProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.91 89.38" {...props}>
+      <g className="cls-1">
+        <g id="Calque_1" data-name="Calque 1">
+          <polygon className="cls-2" fill="#afab24" points="33.58 0 0 45.2 33.58 89.38 66.91 44.94 33.58 0"></polygon>
+        </g>
+      </g>
+    </svg>
+  ),
 }

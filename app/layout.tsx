@@ -2,7 +2,7 @@ import "@/styles/globals.css"
 import { Metadata } from "next"
 
 import { siteConfig } from "@/config/site"
-import { fontSans, fontComing } from "@/lib/fonts"
+import { fontSans, fontComing, fontCaveat, fontBellota } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
@@ -38,12 +38,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
           className={cn(
             "min-h-screen bg-stone-300 font-sans antialiased relative",
             fontSans.variable,
-            fontComing.variable
+            fontComing.variable,
+            fontCaveat.variable,
+            fontBellota.variable
           )}
         >
           <div className="relative flex flex-col min-h-screen">
             <SiteHeader />
-            <div className="flex-1">{children}</div>
+            <main className="flex-1">{children}</main>
             <SiteFooter />
           </div>
           <TailwindIndicator />

@@ -58,7 +58,9 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
-        coming: ["var(--font-coming)"]
+        coming: ["var(--font-coming)"],
+        caveat: ["var(--font-caveat)"],
+        bellota: ["var(--font-bellota)"]
       },
       keyframes: {
         "accordion-down": {

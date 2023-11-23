@@ -5,11 +5,11 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
+  "inline-flex items-center justify-center font-bellota rounded-sm text-xl font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "text-[#69240C] font-extrabold hover:bg-[#69240C] bg-yellow-600 hover:text-white",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -20,7 +20,7 @@ const buttonVariants = cva(
         link: "underline-offset-4 hover:underline text-primary",
       },
       size: {
-        default: "h-10 py-2 px-4",
+        default: "px-8 py-2",
         sm: "h-9 px-3 rounded-md",
         lg: "h-11 px-8 rounded-md",
         icon: "h-10 w-10",
@@ -44,6 +44,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
+        style={{ boxShadow: "8px 8px 15px 0px rgba(105, 36.00000000000004, 12.000000000000004, 0.67)" }}
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}

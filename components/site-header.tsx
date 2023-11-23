@@ -16,7 +16,7 @@ export function SiteHeader() {
         ))}
       </div>
     </header>
-    <Image src="/assets/header-banner.png" alt="Separator" height={230} width={1000} layout="responsive" className="mt-2 mb-8" sizes="100vw" />
+    <Image src="/assets/header-banner.png" alt="Separator" height={230} width={1000} className="w-full h-auto mt-2 mb-8" sizes="100vw" />
     
     {/* Border bottom header */}
     <div className="container">
